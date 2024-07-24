@@ -4,5 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuIcon.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        menuIcon.setAttribute('aria-expanded', navMenu.classList.contains('active'));
     });
 });
