@@ -5,19 +5,31 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #f06;
+    --secondary-color: #f9a;
+    --text-color: #333;
+    --background-color: #fff;
+    --font-family: Arial, sans-serif;
+    --max-width: 1200px;
+    --container-padding: 20px;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--container-padding);
 }
 
 /* Header */
 .header {
-    background-color: #fff;
+    background-color: var(--background-color);
     padding: 20px 0;
     border-bottom: 1px solid #ddd;
 }
@@ -32,7 +44,7 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
 }
 
 .nav-menu {
@@ -43,7 +55,13 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+    color: var(--primary-color);
 }
 
 .menu-icon {
@@ -56,12 +74,12 @@ body {
 .menu-icon span {
     width: 25px;
     height: 2px;
-    background-color: #333;
+    background-color: var(--text-color);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #f06, #f9a);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-align: center;
     padding: 100px 20px;
@@ -79,11 +97,18 @@ body {
 
 .hero .btn {
     background: white;
-    color: #f06;
+    color: var(--primary-color);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero .btn:hover,
+.hero .btn:focus {
+    background: var(--primary-color);
+    color: white;
 }
 
 /* Features Section */
@@ -102,6 +127,13 @@ body {
     display: inline-block;
     width: calc(33% - 40px);
     box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover,
+.feature-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .feature-card h2 {
@@ -127,6 +159,13 @@ body {
     display: inline-block;
     width: calc(33% - 40px);
     box-sizing: border-box;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.research-card:hover,
+.research-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .research-card h2 {
