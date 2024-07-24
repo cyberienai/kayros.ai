@@ -1,196 +1,101 @@
-/* Reset some default browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #f06;
-    --secondary-color: #f9a;
-    --text-color: #333;
-    --background-color: #fff;
-    --font-family: Arial, sans-serif;
-    --max-width: 1200px;
-    --container-padding: 20px;
-}
-
 body {
-    font-family: var(--font-family);
-    color: var(--text-color);
-    background-color: var(--background-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff0080, #ff8c00);
+    color: #fff;
 }
 
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--container-padding);
-}
-
-/* Header */
-.header {
-    background-color: var(--background-color);
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.navbar {
+header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 20px 40px;
+    background: #fff;
+    color: #000;
 }
 
-.logo {
-    font-size: 1.5em;
+header .logo {
+    font-size: 24px;
     font-weight: bold;
-    text-decoration: none;
-    color: var(--text-color);
 }
 
-.nav-menu {
-    list-style: none;
+nav ul {
     display: flex;
-    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-menu a {
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
     text-decoration: none;
-    color: var(--text-color);
-    transition: color 0.3s;
+    color: #000;
+    font-weight: bold;
 }
 
-.nav-menu a:hover,
-.nav-menu a:focus {
-    color: var(--primary-color);
+nav ul li .get-started {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
-.menu-icon {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.menu-icon span {
-    width: 25px;
-    height: 2px;
-    background-color: var(--text-color);
-}
-
-/* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
     text-align: center;
     padding: 100px 20px;
 }
 
 .hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 48px;
 }
 
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.hero .btn {
-    background: white;
-    color: var(--primary-color);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.hero .btn:hover,
-.hero .btn:focus {
-    background: var(--primary-color);
-    color: white;
-}
-
-/* Features Section */
 .features {
-    padding: 50px 0;
-    background-color: #f9f9f9;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.features .feature {
     text-align: center;
 }
 
-.feature-card {
-    background: white;
+.features .feature-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.features .feature-buttons button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.features .models {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.features .models .model {
+    background: #fff;
+    color: #000;
     padding: 20px;
-    margin: 20px;
+    margin: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: inline-block;
-    width: calc(33% - 40px);
-    box-sizing: border-box;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.feature-card:hover,
-.feature-card:focus {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.feature-card h2 {
-    margin-bottom: 10px;
-}
-
-.feature-card p {
-    color: #666;
-}
-
-/* Research Section */
-.research {
-    padding: 50px 0;
     text-align: center;
+    width: 200px;
 }
 
-.research-card {
-    background: white;
-    padding: 20px;
-    margin: 20px;
+.features .models .model img {
+    width: 100%;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: inline-block;
-    width: calc(33% - 40px);
-    box-sizing: border-box;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.research-card:hover,
-.research-card:focus {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.research-card h2 {
-    margin-bottom: 10px;
-}
-
-.research-card p {
-    color: #666;
-}
-
-@media (max-width: 768px) {
-    .feature-card, .research-card {
-        width: calc(100% - 40px);
-    }
-
-    .menu-icon {
-        display: flex;
-    }
-
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
 }
