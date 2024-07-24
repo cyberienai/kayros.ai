@@ -8,6 +8,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 40px;
     background: #fff;
     color: #000;
@@ -42,60 +43,4 @@ nav ul li .get-started {
     border-radius: 5px;
 }
 
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h1 {
-    font-size: 48px;
-}
-
-.features {
-    padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    margin: 20px;
-}
-
-.features .feature {
-    text-align: center;
-}
-
-.features .feature-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.features .feature-buttons button {
-    background: #000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.features .models {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.features .models .model {
-    background: #fff;
-    color: #000;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    text-align: center;
-    width: 200px;
-}
-
-.features .models .model img {
-    width: 100%;
-    border-radius: 10px;
-}
+.hero
